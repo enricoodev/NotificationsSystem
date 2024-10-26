@@ -1,0 +1,109 @@
+:root {
+    --background-notify: #222222b4;
+    --message-font: 0.95rem;
+    --title-font: 1.1rem;
+    --icon-font: 1.95rem;
+    --border-radius: 28px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+ul {
+    position: fixed;
+    width: 16vw;
+    height: 50vh;
+    margin: 150px 15px 0 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+li {
+    position: relative;
+    width: 16vw;
+    background-color: var(--background-notify);
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    flex-grow: 1;
+}
+
+.icon {
+    font-size: var(--icon-font);
+    color: #3498db;
+    margin-right: 15px;
+}
+
+.titolo {
+    font-size: var(--title-font);
+    font-weight: bold;
+    color: #3498db;
+}
+
+.testo {
+    font-size: var(--message-font);
+    word-wrap: break-word;
+    padding-right: 5px;
+}
+
+.more-options {
+    top: 2;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dot {
+    height: 5px;
+    width: 5px;
+    background-color: #3498db;
+    border-radius: 50%;
+    margin: 0 1px;
+}
+
+.fadeIn {
+    animation: showNotify 1s ease forwards;
+}
+
+.fadeOut {
+    animation: removeNotify 1s ease forwards;
+}
+
+/* Animation */
+
+@keyframes showNotify {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+}
+
+@keyframes removeNotify {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+}
